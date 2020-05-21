@@ -1,31 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import Main from './Main';
-import Detail from './Detail';
-import { preloadedWeatherArray } from './constants';
+import React, {useEffect, useState} from 'react';
+import Main from './components/Main';
+import Detail from './components/Detail';
+import {preloadedWeatherArray, preloadedCurrentWeather} from './constants';
+import NavBar from './components/NavBar';
 
 const App = () => {
-  const [date, setDate] = useState();
+  const [chosenDate, setChosenDate] = useState();
   const [weatherArray, setWeatherArray] = useState();
-
-  // api does not allow fetching created data in constants.js file
-  // const fetchWeather = () => {
-  //   fetch(
-  //     `http://api.openweathermap.org/data/2.5/forecast/daily?q=dallas&units=imperial&cnt=5&APPID=eb5d165d5a5cb39b9fac037f3cf482be`
-  //   )
-  //     .then(res => res.json())
-  //     .then(res => setWeatherArray(res));
-  // }
+  const [currentWeather, setCurrentWeather] = useState();
 
   useEffect(() => {
-    setWeatherArray(preloadedWeatherArray)
-  }, [])
+    setWeatherArray(preloadedWeatherArray);
+    setCurrentWeather(preloadedCurrentWeather);
+  }, []);
 
   return (
     <>
-      {date == null ?
-        <Main datePicker={setDate} weatherArray={weatherArray} /> :
-        <Detail datePicker={setDate} weather={date} />
-      }
+      {/* Anything outside of native React Native library is not allowed, React Navigation is not included in the native library (https://reactnative.dev/docs/navigation), this acts as a basic version of it. */}
+      <NavBar chosenDate={chosenDate} setChosenDate={setChosenDate} />
+      {chosenDate == null ? (
+        <Main
+          setChosenDate={setChosenDate}
+          weatherArray={weatherArray}
+          currentWeather={currentWeather}
+        />
+      ) : (
+        <Detail setChosenDate={setChosenDate} weather={chosenDate} />
+      )}
     </>
   );
 };
