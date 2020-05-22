@@ -13,6 +13,5 @@ export const CustomText = props => {
 const styles = StyleSheet.create({
   defaultStyle: {
     fontFamily: 'sans-serif-condensed',
-    fontWeight: '500',
   },
 });

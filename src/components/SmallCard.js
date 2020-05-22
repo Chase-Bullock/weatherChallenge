@@ -12,34 +12,34 @@ const SmallCard = props => {
 
   return (
     <>
-        <TouchableOpacity
-          style={styles.dayRow}
-          onPress={() => setChosenDate(weather)}>
-          <View style={styles.iconContainer}>
-            <Image
-              style={styles.icon}
-              source={weatherConditions[(weather?.weather[0]?.icon)][1]}
-            />
-          </View>
-          <View style={styles.dateContainer}>
-            <CustomText style={styles.day}>
-              {getWeatherDay(weather.dt)}
-            </CustomText>
-            <CustomText style={styles.weatherType}>
-              {weather?.weather[0].main}
-            </CustomText>
-          </View>
-          <View style={styles.tempContainer}>
-            <CustomText style={styles.tempMax}>
-              {tempFormatter(weather.main.temp_max)}
-              &deg;
-            </CustomText>
-            <CustomText style={styles.tempMin}>
-              {tempFormatter(weather.main.temp_min)}
-              &deg;
-            </CustomText>
-          </View>
-        </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.dayRow}
+        onPress={() => setChosenDate(weather)}>
+        <View style={styles.iconContainer}>
+          <Image
+            style={styles.icon}
+            source={weatherConditions[(weather?.weather[0]?.icon)][1]}
+          />
+        </View>
+        <View style={styles.dateContainer}>
+          <CustomText style={styles.day}>
+            {getWeatherDay(weather.dt)}
+          </CustomText>
+          <CustomText style={styles.weatherType}>
+            {weather?.weather[0].main}
+          </CustomText>
+        </View>
+        <View style={styles.tempContainer}>
+          <CustomText style={styles.tempMax}>
+            {tempFormatter(weather.main.temp_max)}
+            &deg;
+          </CustomText>
+          <CustomText style={styles.tempMin}>
+            {tempFormatter(weather.main.temp_min)}
+            &deg;
+          </CustomText>
+        </View>
+      </TouchableOpacity>
     </>
   );
 };

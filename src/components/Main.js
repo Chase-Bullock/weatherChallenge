@@ -18,8 +18,6 @@ const Main = props => {
       )
     });
   }
-  console.log("array", weatherArray)
-  console.log("current", currentWeather)
   return (
     <>
       {weatherArray && currentWeather && (

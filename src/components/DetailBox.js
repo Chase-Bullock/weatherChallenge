@@ -9,17 +9,13 @@ const DetailBox = props => {
 
   return (
     <>
-        <View style={styles.container}>
-          <Text style={styles.textBox}>
-            Humidity: {weather.main.humidity} %
-          </Text>
-          <Text style={styles.textBox}>
-            Pressure: {weather.main.pressure} hPa
-          </Text>
-          <Text style={styles.textBox}>
-            Wind: {windFormatter(weather.wind)}
-          </Text>
-        </View>
+      <View style={styles.container}>
+        <Text style={styles.textBox}>Humidity: {weather.main.humidity} %</Text>
+        <Text style={styles.textBox}>
+          Pressure: {weather.main.pressure} hPa
+        </Text>
+        <Text style={styles.textBox}>Wind: {windFormatter(weather.wind)}</Text>
+      </View>
     </>
   );
 };

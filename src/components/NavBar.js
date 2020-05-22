@@ -12,10 +12,7 @@ const NavBar = props => {
         <TouchableOpacity
           style={styles.backButton}
           onPress={() => setChosenDate()}>
-          <Image
-            style={styles.icon}
-            source={BackArrow}
-          />
+          <Image style={styles.icon} source={BackArrow} />
         </TouchableOpacity>
       )}
     </View>

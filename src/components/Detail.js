@@ -10,10 +10,10 @@ const Detail = props => {
 
   return (
     <>
-        <View style={styles.container}>
-          <DetailCard weather={weather} />
-          <DetailBox weather={weather} />
-        </View>
+      <View style={styles.container}>
+        <DetailCard weather={weather} />
+        <DetailBox weather={weather} />
+      </View>
     </>
   );
 };

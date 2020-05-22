@@ -8,35 +8,35 @@ import {CustomText} from './CustomText';
 
 const MainCard = props => {
   const {weather, setChosenDate} = props;
-  
+
   return (
     <>
-        <TouchableOpacity
-          style={styles.todayWeatherContainer}
-          onPress={() => setChosenDate(weather)}>
-          <View style={styles.leftDisplay}>
-            <CustomText style={[styles.displayDate]}>
-              {`${getWeatherDay(weather?.dt)}, ${dateFormatter(weather?.dt)}`}
-            </CustomText>
-            <CustomText style={styles.tempMax}>
-              {tempFormatter(weather.main.temp_max)}
-              &deg;
-            </CustomText>
-            <CustomText style={styles.tempMin}>
-              {tempFormatter(weather.main.temp_min)}
-              &deg;
-            </CustomText>
-          </View>
-          <View style={styles.rightDisplay}>
-            <Image
-              style={styles.image}
-              source={weatherConditions[(weather?.weather[0]?.icon)][0]}
-            />
-            <CustomText style={styles.weatherText}>
-              {weather?.weather[0].main}
-            </CustomText>
-          </View>
-        </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.todayWeatherContainer}
+        onPress={() => setChosenDate(weather)}>
+        <View style={styles.leftDisplay}>
+          <CustomText style={[styles.displayDate]}>
+            {`${getWeatherDay(weather?.dt)}, ${dateFormatter(weather?.dt)}`}
+          </CustomText>
+          <CustomText style={styles.tempMax}>
+            {tempFormatter(weather.main.temp_max)}
+            &deg;
+          </CustomText>
+          <CustomText style={styles.tempMin}>
+            {tempFormatter(weather.main.temp_min)}
+            &deg;
+          </CustomText>
+        </View>
+        <View style={styles.rightDisplay}>
+          <Image
+            style={styles.image}
+            source={weatherConditions[(weather?.weather[0]?.icon)][0]}
+          />
+          <CustomText style={styles.weatherText}>
+            {weather?.weather[0].main}
+          </CustomText>
+        </View>
+      </TouchableOpacity>
     </>
   );
 };
