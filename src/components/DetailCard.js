@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
-import {MEDIUM_FONT, SECONDARY, GREY_FONT} from '../constants';
+import {StyleSheet, View, Image} from 'react-native';
 
+import {MEDIUM_FONT, SECONDARY, GREY_FONT} from '../constants';
 import {weatherConditions} from '../WeatherConditions.js';
 import {dateFormatter, tempFormatter, getWeatherDay} from '../utils';
 import {CustomText} from './CustomText';
@@ -12,8 +12,6 @@ const DetailCard = props => {
 
   return (
     <View style={styles.container}>
-      {weather != null && (
-        <View style={styles.currentWeather}>
           <View style={styles.dateContainer}>
             <CustomText style={styles.day}>
               {getWeatherDay(weather?.dt)}
@@ -43,8 +41,6 @@ const DetailCard = props => {
               </CustomText>
             </View>
           </View>
-        </View>
-      )}
     </View>
   );
 };
@@ -52,14 +48,16 @@ const DetailCard = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 0.5,
+    padding: 15,
+    flexDirection: 'column',
+    backgroundColor: SECONDARY,
   },
   dateContainer: {
     flex: 0.35,
   },
   currentWeather: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: SECONDARY,
+
   },
   mainBox: {
     flex: 1,
@@ -96,7 +94,7 @@ const styles = StyleSheet.create({
   leftDisplay: {
     flex: 0.5,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   rightDisplay: {
     flex: 0.5,
@@ -106,7 +104,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '90%',
-    height: '65%',
+    height: '90%',
   },
 });
 

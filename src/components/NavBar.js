@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
+import BackArrow from '../../Assets/backArrow.png';
 import {PRIMARY} from '../constants';
 
 const NavBar = props => {
@@ -13,7 +14,7 @@ const NavBar = props => {
           onPress={() => setChosenDate()}>
           <Image
             style={styles.icon}
-            source={require('../Assets/backArrow.png')}
+            source={BackArrow}
           />
         </TouchableOpacity>
       )}
@@ -23,11 +24,10 @@ const NavBar = props => {
 
 const styles = StyleSheet.create({
   navBar: {
-    flex: 0.1,
+    flex: 0.12,
     backgroundColor: PRIMARY,
-    justifyContent: 'center',
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 4},
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.5,
     shadowRadius: 2,
     elevation: 2,

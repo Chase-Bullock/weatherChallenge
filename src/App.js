@@ -18,7 +18,7 @@ const App = () => {
     <>
       {/* Anything outside of native React Native library is not allowed, React Navigation is not included in the native library (https://reactnative.dev/docs/navigation), this acts as a basic version of it. */}
       <NavBar chosenDate={chosenDate} setChosenDate={setChosenDate} />
-      {chosenDate == null ? (
+      {!chosenDate ? (
         <Main
           setChosenDate={setChosenDate}
           weatherArray={weatherArray}

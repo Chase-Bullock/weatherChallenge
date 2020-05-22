@@ -7,20 +7,25 @@ import SmallCard from './SmallCard';
 const Main = props => {
   const {setChosenDate, weatherArray, currentWeather} = props;
 
+  const renderList = () => {
+    return weatherArray && weatherArray.map((weather, index) => {
+      return (
+        <SmallCard
+          key={index}
+          weather={weather}
+          setChosenDate={setChosenDate}
+        />
+      )
+    });
+  }
+  console.log("array", weatherArray)
+  console.log("current", currentWeather)
   return (
     <>
-      {weatherArray != null && (
+      {weatherArray && currentWeather && (
         <View style={styles.container}>
           <MainCard weather={currentWeather} setChosenDate={setChosenDate} />
-          {weatherArray.map((weather, index) => {
-            return (
-              <SmallCard
-                key={index}
-                weather={weather}
-                setChosenDate={setChosenDate}
-              />
-            );
-          })}
+          {renderList()}
         </View>
       )}
     </>

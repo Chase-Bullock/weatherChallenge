@@ -8,10 +8,9 @@ import {CustomText} from './CustomText';
 
 const MainCard = props => {
   const {weather, setChosenDate} = props;
-
+  
   return (
     <>
-      {weather != null && (
         <TouchableOpacity
           style={styles.todayWeatherContainer}
           onPress={() => setChosenDate(weather)}>
@@ -38,7 +37,6 @@ const MainCard = props => {
             </CustomText>
           </View>
         </TouchableOpacity>
-      )}
     </>
   );
 };
@@ -70,7 +68,7 @@ const styles = StyleSheet.create({
   leftDisplay: {
     flex: 0.5,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   rightDisplay: {
     flex: 0.5,
@@ -79,7 +77,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: '70%',
+    height: '90%',
   },
 });
 

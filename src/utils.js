@@ -1,4 +1,4 @@
-export const getWeatherDay = (passedInDate) => {
+export const getWeatherDay = (passedInDate = '') => {
   if(!passedInDate.getDay) {
   passedInDate = new Date(passedInDate * 1000);
   }
@@ -29,7 +29,7 @@ export const dateFormatter = (unixDate) => {
 export const tempFormatter = (temp) => {
   let tempString = temp.toString()
   var cutPoint = tempString.indexOf('.');
-  temp = tempString.substring(0, cutPoint != -1 ? cutPoint : tempString.length);
+  temp = tempString.substring(0, cutPoint !== -1 ? cutPoint : tempString.length);
 
   return temp;
 }
@@ -38,7 +38,7 @@ export const tempFormatter = (temp) => {
 export const windFormatter = (wind) => {
   let windSpeedString = wind.speed.toString()
   var cutPoint = windSpeedString.indexOf('.');
-  windSpeedString = windSpeedString.substring(0, cutPoint != -1 ? cutPoint : windSpeedString.length);
+  windSpeedString = windSpeedString.substring(0, cutPoint !== -1 ? cutPoint : windSpeedString.length);
   const direction = getDirection(wind.deg);
   return `${windSpeedString} km/h ${direction}`;
 }

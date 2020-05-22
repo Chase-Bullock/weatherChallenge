@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
+
 import {SECONDARY, SMALL_FONT} from '../constants';
 import {windFormatter} from '../utils';
 
@@ -8,7 +9,6 @@ const DetailBox = props => {
 
   return (
     <>
-      {weather != null && (
         <View style={styles.container}>
           <Text style={styles.textBox}>
             Humidity: {weather.main.humidity} %
@@ -20,7 +20,6 @@ const DetailBox = props => {
             Wind: {windFormatter(weather.wind)}
           </Text>
         </View>
-      )}
     </>
   );
 };
@@ -33,6 +32,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 0.5,
     backgroundColor: SECONDARY,
+    padding: 15,
   },
 });
 

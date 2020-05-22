@@ -12,7 +12,6 @@ const SmallCard = props => {
 
   return (
     <>
-      {weather != null && (
         <TouchableOpacity
           style={styles.dayRow}
           onPress={() => setChosenDate(weather)}>
@@ -41,7 +40,6 @@ const SmallCard = props => {
             </CustomText>
           </View>
         </TouchableOpacity>
-      )}
     </>
   );
 };
